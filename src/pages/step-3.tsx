@@ -1,3 +1,6 @@
+/*
+Finally, we do some mutations
+*/
 import React from "react";
 import { gql, useQuery, useMutation } from "@apollo/client";
 import { Divider, Error, ShowTasks } from "../components";
