@@ -1,2 +1,5 @@
 yarn.error
 node_modules
+keystone-example.db
+.keystone
+.next
