@@ -12,7 +12,7 @@ export const lists = {
     fields: {
       label: text({ validation: { isRequired: true } }),
       priority: select({
-        type: "enum",
+        type: "string",
         options: [
           { label: "Low", value: "1_low" },
           { label: "Medium", value: "2_medium" },
