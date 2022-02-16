@@ -4,16 +4,10 @@
 type Task {
   id: ID!
   label: String
-  priority: TaskPriorityType
+  priority: String
   isComplete: Boolean
   assignedTo: Person
   finishBy: DateTime
-}
-
-enum TaskPriorityType {
-  low
-  medium
-  high
 }
 
 scalar DateTime
@@ -29,7 +23,7 @@ input TaskWhereInput {
   NOT: [TaskWhereInput!]
   id: IDFilter
   label: StringFilter
-  priority: TaskPriorityTypeNullableFilter
+  priority: StringNullableFilter
   isComplete: BooleanFilter
   assignedTo: PersonWhereInput
   finishBy: DateTimeNullableFilter
@@ -74,11 +68,32 @@ input NestedStringFilter {
   not: NestedStringFilter
 }
 
-input TaskPriorityTypeNullableFilter {
-  equals: TaskPriorityType
-  in: [TaskPriorityType!]
-  notIn: [TaskPriorityType!]
-  not: TaskPriorityTypeNullableFilter
+input StringNullableFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringNullableFilter
+}
+
+input NestedStringNullableFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringNullableFilter
 }
 
 input BooleanFilter {
@@ -112,7 +127,7 @@ enum OrderDirection {
 
 input TaskUpdateInput {
   label: String
-  priority: TaskPriorityType
+  priority: String
   isComplete: Boolean
   assignedTo: PersonRelateToOneForUpdateInput
   finishBy: DateTime
@@ -131,7 +146,7 @@ input TaskUpdateArgs {
 
 input TaskCreateInput {
   label: String
-  priority: TaskPriorityType
+  priority: String
   isComplete: Boolean
   assignedTo: PersonRelateToOneForCreateInput
   finishBy: DateTime

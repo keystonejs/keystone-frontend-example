@@ -8,7 +8,7 @@ import { Task } from "../types";
 
 const GET_TASKS = gql`
   query getTasks {
-    tasks(where: { isComplete: { equals: false } }) {
+    tasks(where: { isComplete: { equals: true } }, orderBy: { priority: asc }) {
       id
       priority
       isComplete

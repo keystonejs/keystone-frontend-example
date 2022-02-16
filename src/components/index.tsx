@@ -61,17 +61,6 @@ export const TodoItem = ({
   );
 };
 
-// Why are we doing this?
-// Well, KS lets you sort by priority, but you can only specify ASC or DESC
-// which is alphabetical.
-const priorityFunction = (a: Task, b: Task): -1 | 1 => {
-  const priorities = ["high", "medium", "low"];
-
-  return priorities.indexOf(a.priority) > priorities.indexOf(b.priority)
-    ? 1
-    : -1;
-};
-
 export const ShowTasks = ({
   heading = "Still To Do 💻",
   onCheckboxChange = () => {},
@@ -81,12 +70,10 @@ export const ShowTasks = ({
   onCheckboxChange?: (task: Task) => void;
   heading: string;
 }) => {
-  const sortedTasks = useMemo(() => [...tasks].sort(priorityFunction), [tasks]);
-
   return (
     <div>
       <h2 style={{ textAlign: "center" }}>{heading}</h2>
-      {sortedTasks.map((todoItem) => (
+      {tasks.map((todoItem) => (
         <TodoItem
           key={todoItem.id}
           {...todoItem}
