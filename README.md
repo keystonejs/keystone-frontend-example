@@ -11,9 +11,9 @@ Changes should be committed to `completed` and then ported over to `main`. Here 
 ```
 git checkout main
 git checkout completed .
-git reset experiments.tsx next-env.d.ts src/pages package.json yarn.lock README.md
+git reset experiments.tsx next-env.d.ts src/pages package.json yarn.lock README.md keystone.ts
 git clean experiments.tsx next-env.d.ts src/pages -f
-git restore yarn.lock package.json README.md
+git restore yarn.lock package.json README.md keystone.ts
 ```
 
 The `keystone.ts` file is the only file that needs to be different between the two and changes there must be made manually
