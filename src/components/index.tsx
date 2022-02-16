@@ -1,4 +1,10 @@
-import React, { useMemo } from "react";
+/*
+Welcome to our components file! We wanted to focus the learnings on
+how to use graphql with keystone, so we've hidden code that'll make
+the rendered app feel better over here, letting you focus in the lesson
+on the walkthrough's main topics.
+*/
+import React from "react";
 import { Task } from "../types";
 
 const getPriorityColor = (priority: string) =>

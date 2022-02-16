@@ -21,7 +21,7 @@ export const lists = {
       }),
       isComplete: checkbox(),
       assignedTo: relationship({ ref: "Person.tasks", many: false }),
-      finishBy: timestamp(),
+      finishedBy: timestamp(),
     },
   }),
   Person: list({

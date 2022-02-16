@@ -7,7 +7,7 @@ type Task {
   priority: String
   isComplete: Boolean
   assignedTo: Person
-  finishBy: DateTime
+  finishedBy: DateTime
 }
 
 scalar DateTime
@@ -26,7 +26,7 @@ input TaskWhereInput {
   priority: StringNullableFilter
   isComplete: BooleanFilter
   assignedTo: PersonWhereInput
-  finishBy: DateTimeNullableFilter
+  finishedBy: DateTimeNullableFilter
 }
 
 input IDFilter {
@@ -117,7 +117,7 @@ input TaskOrderByInput {
   label: OrderDirection
   priority: OrderDirection
   isComplete: OrderDirection
-  finishBy: OrderDirection
+  finishedBy: OrderDirection
 }
 
 enum OrderDirection {
@@ -130,7 +130,7 @@ input TaskUpdateInput {
   priority: String
   isComplete: Boolean
   assignedTo: PersonRelateToOneForUpdateInput
-  finishBy: DateTime
+  finishedBy: DateTime
 }
 
 input PersonRelateToOneForUpdateInput {
@@ -149,7 +149,7 @@ input TaskCreateInput {
   priority: String
   isComplete: Boolean
   assignedTo: PersonRelateToOneForCreateInput
-  finishBy: DateTime
+  finishedBy: DateTime
 }
 
 input PersonRelateToOneForCreateInput {

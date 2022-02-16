@@ -13,7 +13,7 @@ const GET_ALL_TASKS = gql`
       id
       priority
       isComplete
-      finishBy
+      finishedBy
       label
     }
   }
@@ -23,11 +23,11 @@ const UPDATE_TASK = gql`
   mutation updateATask($id: ID, $isComplete: Boolean, $finishedBy: DateTime) {
     updateTask(
       where: { id: $id }
-      data: { isComplete: $isComplete, finishBy: $finishedBy }
+      data: { isComplete: $isComplete, finishedBy: $finishedBy }
     ) {
       isComplete
       id
-      finishBy
+      finishedBy
     }
   }
 `;

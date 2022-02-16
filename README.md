@@ -1,33 +1,19 @@
-## Base Project - Task Manager
+# Keystone Frontend Example (Complete)
 
-This base project implements a simple **Task Management** app, with `Tasks` and `People` who can be assigned to tasks.
+This is the completed branch for the keystone frontend example - if you are following the tutorial series, please check out `main`.
 
-Use it as a starting place for learning how to use Keystone.
+## Making Changes
 
-## Instructions
+Some but not all files on this branch should be kept identical with main. The logic is, the files you start with should be the same in both places, but the files you will add in the walkthrough shouldn't be in `main`.
 
-To run this project, clone the Keystone repository locally, run `yarn` at the root of the repository then navigate to this directory and run:
+Changes should be committed to `completed` and then ported over to `main`. Here is a git script that will do it as relevant:
 
-```shell
-yarn dev
+```
+git checkout main
+git checkout completed .
+git reset experiments.tsx next-env.d.ts src/pages package.json yarn.lock README.md
+git clean experiments.tsx next-env.d.ts src/pages -f
+git restore yarn.lock package.json README.md
 ```
 
-This will start Keystone’s Admin UI at [localhost:3000](http://localhost:3000), where you can add items to an empty database.
-
-You can also access Keystone’s GraphQL Playground at [localhost:3000/api/graphql](http://localhost:3000/api/graphql) to explore the GraphQL API, and run [queries](https://keystonejs.com/docs/guides/filters) and [mutations](https://keystonejs.com/docs/apis/graphql#mutations) on your data.
-
-Congratulations, you’re now up and running with Keystone! 🚀
-
-### Optional: add sample data
-
-This example includes sample data. To add it to your database:
-
-1. Ensure you’ve initialised your project with `yarn dev` at least once.
-2. Run `yarn seed-data`. This will populate your database with sample content.
-3. Run `yarn dev` again to startup Admin UI with sample data in place.
-
-## Next steps
-
-Experiment with the code in this example to see how Keystone works, familiarise yourself with the Admin UI, and learn about the GraphQL Playground.
-
-When you’ve got the hang of this base project, try a [feature project](../) to learn Keystone’s advanced features and take your knowledge to the next level.
+The `keystone.ts` file is the only file that needs to be different between the two and changes there must be made manually

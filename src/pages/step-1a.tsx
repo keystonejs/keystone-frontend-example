@@ -12,7 +12,7 @@ const GET_TASKS = gql`
       id
       priority
       isComplete
-      finishBy
+      finishedBy
       label
     }
   }
