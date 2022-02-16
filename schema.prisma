@@ -18,7 +18,7 @@ model Task {
   isComplete   Boolean   @default(false)
   assignedTo   Person?   @relation("Task_assignedTo", fields: [assignedToId], references: [id])
   assignedToId String?   @map("assignedTo")
-  finishBy     DateTime?
+  finishedBy   DateTime?
 
   @@index([assignedToId])
 }
